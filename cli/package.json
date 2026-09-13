@@ -1,0 +1,16 @@
+{
+  "name": "ai-ui-cli",
+  "version": "0.1.0",
+  "description": "Install AI-UI dictionary components into your project — ai-ui add <slug>",
+  "type": "module",
+  "bin": {
+    "ai-ui": "ai-ui.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "scripts": {
+    "ai-ui": "node ai-ui.mjs"
+  }
+}

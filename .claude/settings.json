@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm test)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm build)",
+      "Bash(pnpm verify)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm registry:new:*)",
+      "Bash(pnpm registry:check)",
+      "Bash(pnpm registry:check:*)",
+      "Bash(pnpm registry:digest)",
+      "Bash(pnpm registry:digest:*)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch)",
+      "Bash(node .claude/hooks/registry-check.cjs)"
+    ],
+    "deny": ["Edit(.reference/**)", "Write(.reference/**)", "Read(.env)", "Read(.env.*)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/registry-check.cjs"
+          }
+        ]
+      }
+    ]
+  }
+}

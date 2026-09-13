@@ -1,0 +1,11 @@
+# 构建上下文瘦身:COPY 全是显式路径,这里只管上下文上传体积
+node_modules
+.next
+out
+coverage
+.reference
+.claude
+docs
+scripts
+.git
+*.tsbuildinfo

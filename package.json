@@ -1,0 +1,47 @@
+{
+  "name": "ai-ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && tsx src/build/finalize-export.mts",
+    "verify": "pnpm test && pnpm typecheck && pnpm registry:check && pnpm build",
+    "typecheck": "tsc --noEmit",
+    "mcp": "tsx mcp/index.ts",
+    "mcp:http": "tsx mcp/index.ts --http",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "registry:new": "tsx scripts/new-entry.mts",
+    "registry:check": "tsx scripts/check-registry.mts",
+    "registry:digest": "tsx scripts/digest-registry.mts",
+    "shots": "node scripts/screenshot.mjs",
+    "ai-ui": "node cli/ai-ui.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "clsx": "^2.1.1",
+    "geist": "^1.7.2",
+    "lucide-react": "^1.44.0",
+    "motion": "^13.2.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "shiki": "^4.4.3",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.1",
+    "playwright-core": "^1.63.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.13",
+    "typescript": "^5",
+    "vitest": "^5.0.0"
+  },
+  "packageManager": "pnpm@12.4.1"
+}
